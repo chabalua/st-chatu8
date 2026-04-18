@@ -130,6 +130,35 @@ const chatu8_i18n = {
         query('.chatu8-lang-select', el => {
             el.value = this.currentLang;
         });
+
+        this.applyTextSubstitutions(rootEl);
+    },
+
+    applyTextSubstitutions(rootEl) {
+        if (this.currentLang === 'zh') return;
+
+        const root = rootEl.nodeType === Node.DOCUMENT_NODE ? document.body : rootEl;
+        if (!root) return;
+
+        // Text node substitutions
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        let node;
+        while ((node = walker.nextNode())) {
+            const trimmed = node.nodeValue.trim();
+            if (!trimmed) continue;
+            const key = '_txt_' + trimmed;
+            const val = this.translations[key];
+            if (val !== undefined) node.nodeValue = val;
+        }
+
+        // Placeholder substitutions
+        root.querySelectorAll('[placeholder]').forEach(el => {
+            const ph = el.getAttribute('placeholder');
+            if (!ph) return;
+            const key = '_ph_' + ph;
+            const val = this.translations[key];
+            if (val !== undefined) el.setAttribute('placeholder', val);
+        });
     },
 
     // ------------------------------------------------------------------ //

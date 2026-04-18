@@ -3,7 +3,7 @@
         <div class="st-chatu8-modal-content" tabindex="-1">
             <div class="st-chatu8-modal-header">
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <h2 style="margin: 0;">智绘姬 <span id="ch-version-display" class="st-chatu8-version-tag"></span><span id="ch-title-update-notification" data-i18n="title_update_notification" style="display: none; color: var(--st-chatu8-accent-color); font-weight: bold; font-size: 0.8em;"> (发现新版本, 请到“关于”中更新)</span></h2>
+                    <h2 style="margin: 0;"><span data-i18n="app_title">智绘姬</span> <span id="ch-version-display" class="st-chatu8-version-tag"></span><span id="ch-title-update-notification" data-i18n="title_update_notification" style="display: none; color: var(--st-chatu8-accent-color); font-weight: bold; font-size: 0.8em;"> (发现新版本, 请到“关于”中更新)</span></h2>
                     <div id="st-chatu8-ai-trigger" class="st-chatu8-ai-heart-icon" data-i18n-title="ai_trigger_title" title="呼唤智绘姬 AI 助手">
                         <img src="/scripts/extensions/third-party/st-chatu8/html/settings/智绘姬头像.png" alt="智绘姬" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
                     </div>
@@ -52,32 +52,32 @@
     <!-- 智绘姬 AI 助手对话框 (独立于设置面板外) -->
     <div id="st-chatu8-ai-dialog" class="st-chatu8-ai-dialog">
         <div class="st-chatu8-ai-dialog-header">
-            <h3><i class="fa-solid fa-robot"></i> <span id="st-chatu8-ai-dialog-title">智绘姬 AI 助手</span> 
-                <span id="st-chatu8-ai-history-btn" class="st-chatu8-ai-settings-icon" title="聊天历史记录" style="margin-left: 10px;"><i class="fa-solid fa-clock-rotate-left"></i></span>
-                <span id="st-chatu8-ai-new-chat" class="st-chatu8-ai-settings-icon" title="新建聊天" style="margin-left: 5px;"><i class="fa-solid fa-broom"></i></span>
-                <span id="st-chatu8-ai-summary-btn" class="st-chatu8-ai-settings-icon" title="聊天总结" style="margin-left: 5px;"><i class="fa-solid fa-layer-group"></i></span>
-                <span id="st-chatu8-ai-settings-btn" class="st-chatu8-ai-settings-icon" title="设置"><i class="fa-solid fa-gear"></i></span>
+            <h3><i class="fa-solid fa-robot"></i> <span id="st-chatu8-ai-dialog-title" data-i18n="ai_dialog_title">智绘姬 AI 助手</span> 
+                <span id="st-chatu8-ai-history-btn" class="st-chatu8-ai-settings-icon" data-i18n-title="ai_history_title" title="聊天历史记录" style="margin-left: 10px;"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                <span id="st-chatu8-ai-new-chat" class="st-chatu8-ai-settings-icon" data-i18n-title="ai_new_chat_title" title="新建聊天" style="margin-left: 5px;"><i class="fa-solid fa-broom"></i></span>
+                <span id="st-chatu8-ai-summary-btn" class="st-chatu8-ai-settings-icon" data-i18n-title="ai_chat_summary_title" title="聊天总结" style="margin-left: 5px;"><i class="fa-solid fa-layer-group"></i></span>
+                <span id="st-chatu8-ai-settings-btn" class="st-chatu8-ai-settings-icon" data-i18n-title="ai_gear_settings_title" title="设置"><i class="fa-solid fa-gear"></i></span>
             </h3>
             <span class="st-chatu8-ai-dialog-close" id="st-chatu8-ai-close"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <div class="st-chatu8-ai-dialog-body" id="st-chatu8-ai-chat-body">
             <div class="st-chatu8-ai-msg system-msg">
                 <div class="msg-avatar"><img src="/scripts/extensions/third-party/st-chatu8/html/settings/智绘姬头像.png" alt="智绘姬" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"></div>
-                <div class="msg-content">你好呀！我是智绘姬 AI 助手，有什么可以帮到你？(UI原型版)</div>
+                <div class="msg-content" data-i18n="ai_dialog_welcome">你好呀！我是智绘姬 AI 助手，有什么可以帮到你？(UI原型版)</div>
             </div>
         </div>
         <div class="st-chatu8-ai-dialog-footer">
             <div id="st-chatu8-ai-image-preview" class="st-chatu8-ai-image-preview"></div>
             <div class="st-chatu8-ai-input-container">
-                <button id="st-chatu8-ai-image-btn" class="st-chatu8-ai-btn st-chatu8-ai-image-btn" title="添加图片">
+                <button id="st-chatu8-ai-image-btn" class="st-chatu8-ai-btn st-chatu8-ai-image-btn" data-i18n-title="ai_add_image_title" title="添加图片">
                     <i class="fa-solid fa-image"></i>
                 </button>
                 <input type="file" id="st-chatu8-ai-image-input" accept="image/*" multiple style="display: none;">
-                <textarea id="st-chatu8-ai-input" placeholder="输入... (Enter 发送)" rows="1"></textarea>
-                <button id="st-chatu8-ai-mic-btn" class="st-chatu8-ai-btn" title="语音输入" style="display:none;"><i class="fa-solid fa-microphone"></i></button>
-                <span id="st-chatu8-ai-screen-share-indicator" class="st-chatu8-ai-capture-indicator" title="电脑屏幕共享中（点击关闭）" style="display:none;"><i class="fa-solid fa-display"></i></span>
-                <span id="st-chatu8-ai-browser-capture-indicator" class="st-chatu8-ai-capture-indicator" title="浏览器界面共享中（点击关闭）" style="display:none;"><i class="fa-solid fa-globe"></i></span>
-                <span id="st-chatu8-ai-floor-indicator" class="st-chatu8-ai-capture-indicator st-chatu8-ai-floor-indicator" title="楼层信息已收集（点击查看）" style="display:none;"><i class="fa-solid fa-layer-group"></i></span>
+                <textarea id="st-chatu8-ai-input" data-i18n-placeholder="placeholder_ai_input" placeholder="输入... (Enter 发送)" rows="1"></textarea>
+                <button id="st-chatu8-ai-mic-btn" class="st-chatu8-ai-btn" data-i18n-title="ai_voice_input_title" title="语音输入" style="display:none;"><i class="fa-solid fa-microphone"></i></button>
+                <span id="st-chatu8-ai-screen-share-indicator" class="st-chatu8-ai-capture-indicator" data-i18n-title="ai_screen_share_title" title="电脑屏幕共享中（点击关闭）" style="display:none;"><i class="fa-solid fa-display"></i></span>
+                <span id="st-chatu8-ai-browser-capture-indicator" class="st-chatu8-ai-capture-indicator" data-i18n-title="ai_browser_capture_title" title="浏览器界面共享中（点击关闭）" style="display:none;"><i class="fa-solid fa-globe"></i></span>
+                <span id="st-chatu8-ai-floor-indicator" class="st-chatu8-ai-capture-indicator st-chatu8-ai-floor-indicator" data-i18n-title="ai_floor_info_title" title="楼层信息已收集（点击查看）" style="display:none;"><i class="fa-solid fa-layer-group"></i></span>
                 <button id="st-chatu8-ai-send" class="st-chatu8-ai-btn"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
@@ -85,23 +85,23 @@
         <!-- 智绘姬设置面板 (默认隐藏) -->
         <div id="st-chatu8-ai-settings-panel" class="st-chatu8-ai-settings-panel">
             <div class="st-chatu8-ai-settings-header">
-                <h4>设置 <small style="font-weight: normal; opacity: 0.7;">(自动保存)</small></h4>
+                <h4><span data-i18n="ai_settings_heading">设置</span> <small style="font-weight: normal; opacity: 0.7;"><span data-i18n="ai_auto_save_hint">(自动保存)</span></small></h4>
                 <span class="st-chatu8-ai-settings-close" id="st-chatu8-ai-settings-close"><i class="fa-solid fa-xmark"></i></span>
             </div>
             <!-- 分页标签栏 -->
             <div class="st-chatu8-ai-settings-tabs">
                 <button class="st-chatu8-ai-settings-tab active" data-settings-tab="api"><i class="fa-solid fa-key"></i> API</button>
-                <button class="st-chatu8-ai-settings-tab" data-settings-tab="params"><i class="fa-solid fa-sliders"></i> 参数</button>
-                <button class="st-chatu8-ai-settings-tab" data-settings-tab="features"><i class="fa-solid fa-puzzle-piece"></i> 功能</button>
-                <button class="st-chatu8-ai-settings-tab" data-settings-tab="voice"><i class="fa-solid fa-volume-high"></i> 语音</button>
+                <button class="st-chatu8-ai-settings-tab" data-settings-tab="params"><i class="fa-solid fa-sliders"></i> <span data-i18n="ai_tab_params">参数</span></button>
+                <button class="st-chatu8-ai-settings-tab" data-settings-tab="features"><i class="fa-solid fa-puzzle-piece"></i> <span data-i18n="ai_tab_features">功能</span></button>
+                <button class="st-chatu8-ai-settings-tab" data-settings-tab="voice"><i class="fa-solid fa-volume-high"></i> <span data-i18n="ai_tab_voice">语音</span></button>
             </div>
             <div class="st-chatu8-ai-settings-body">
                 <!-- ====== Tab: API 配置 ====== -->
                 <div class="st-chatu8-ai-settings-tab-content active" data-settings-tab-content="api">
                     <div class="st-chatu8-ai-setting-item">
-                        <label for="chatu8-ai-api-url">API 地址</label>
+                        <label for="chatu8-ai-api-url" data-i18n="label_api_address">API 地址</label>
                         <input type="text" id="chatu8-ai-api-url" placeholder="如: https://api.openai.com/v1">
-                        <small>如果不填使用酒馆默认后端代理地址，需用酒馆代理时填 /api/v1 形式</small>
+                        <small data-i18n="help_api_url">如果不填使用酒馆默认后端代理地址，需用酒馆代理时填 /api/v1 形式</small>
                     </div>
                     <div class="st-chatu8-ai-setting-item">
                         <label for="chatu8-ai-api-key">API Key</label>
@@ -109,46 +109,46 @@
                     </div>
                     <div class="st-chatu8-ai-setting-item">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                            <label for="chatu8-ai-model" style="margin-bottom: 0;">模型名称</label>
-                            <button id="chatu8-ai-fetch-models" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" title="获取模型列表"><i class="fa-solid fa-sync"></i> 获取可用模型</button>
+                            <label for="chatu8-ai-model" style="margin-bottom: 0;" data-i18n="label_model_name">模型名称</label>
+                            <button id="chatu8-ai-fetch-models" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" data-i18n-title="title_fetch_models" title="获取模型列表"><i class="fa-solid fa-sync"></i> <span data-i18n="btn_fetch_models">获取可用模型</span></button>
                         </div>
-                        <select id="chatu8-ai-model-select" class="st-chatu8-ai-select" title="选择获取到的模型">
-                            <option value="">(请先获取并选择模型)</option>
+                        <select id="chatu8-ai-model-select" class="st-chatu8-ai-select" data-i18n-title="title_select_model" title="选择获取到的模型">
+                            <option value="" data-i18n="option_select_model_first">(请先获取并选择模型)</option>
                         </select>
                         <input type="text" id="chatu8-ai-model" placeholder="支持上面自动选择或手动输入 (如: gpt-3.5-turbo)" style="width: 100%;">
                     </div>
                     <div class="st-chatu8-ai-setting-item">
-                        <label for="chatu8-ai-system-prompt">预设角色 (System Prompt)</label>
+                        <label for="chatu8-ai-system-prompt" data-i18n="label_system_prompt">预设角色 (System Prompt)</label>
                         <select id="chatu8-ai-system-prompt" class="st-chatu8-ai-select">
                             <!-- 动态加载 -->
                         </select>
                     </div>
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-bypass-proxy">
-                        <label for="chatu8-ai-bypass-proxy">直接请求 (不通过酒馆代理)</label>
+                        <label for="chatu8-ai-bypass-proxy"><span data-i18n="label_bypass_proxy">直接请求 (不通过酒馆代理)</span></label>
                     </div>
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-send-images" checked>
-                        <label for="chatu8-ai-send-images">发送图片 (关闭后不会将图片发送给模型，适用于不支持多模态的模型)</label>
+                        <label for="chatu8-ai-send-images"><span data-i18n="label_send_images_ai">发送图片 (关闭后不会将图片发送给模型，适用于不支持多模态的模型)</span></label>
                     </div>
                     <div class="st-chatu8-ai-setting-item checkbox" style="display: none;">
                         <input type="checkbox" id="chatu8-ai-stream">
-                        <label for="chatu8-ai-stream">流式输出 (Stream)</label>
+                        <label for="chatu8-ai-stream"><span data-i18n="label_stream_output">流式输出 (Stream)</span></label>
                     </div>
                 </div>
 
                 <!-- ====== Tab: 模型参数 ====== -->
                 <div class="st-chatu8-ai-settings-tab-content" data-settings-tab-content="params">
                     <div class="st-chatu8-ai-setting-item">
-                        <label for="chatu8-ai-max-tokens">Max Tokens (最大返回字符)</label>
+                        <label for="chatu8-ai-max-tokens" data-i18n="label_max_tokens">Max Tokens (最大返回字符)</label>
                         <input type="number" id="chatu8-ai-max-tokens" placeholder="40000" min="1" step="1">
                     </div>
                     <div class="st-chatu8-ai-setting-item">
-                        <label for="chatu8-ai-temperature">Temperature (随机性, 0-2)</label>
+                        <label for="chatu8-ai-temperature" data-i18n="label_temperature">Temperature (随机性, 0-2)</label>
                         <input type="number" id="chatu8-ai-temperature" placeholder="0.8" min="0" max="2" step="0.01">
                     </div>
                     <div class="st-chatu8-ai-setting-item">
-                        <label for="chatu8-ai-top-p">Top P (采样阈值, 0-1)</label>
+                        <label for="chatu8-ai-top-p" data-i18n="label_top_p">Top P (采样阈值, 0-1)</label>
                         <input type="number" id="chatu8-ai-top-p" placeholder="1.0" min="0" max="1" step="0.01">
                     </div>
                 </div>
@@ -157,36 +157,36 @@
                 <div class="st-chatu8-ai-settings-tab-content" data-settings-tab-content="features">
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-auto-execute">
-                        <label for="chatu8-ai-auto-execute">命令主动执行 (自动执行 AI 调用的系统命令)</label>
+                        <label for="chatu8-ai-auto-execute"><span data-i18n="label_auto_execute">命令主动执行 (自动执行 AI 调用的系统命令)</span></label>
                     </div>
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-knowledge-base">
-                        <label for="chatu8-ai-knowledge-base">资料库 (启用后智绘姬可引用用户添加的参考资料)</label>
+                        <label for="chatu8-ai-knowledge-base"><span data-i18n="label_knowledge_base_ai">资料库 (启用后智绘姬可引用用户添加的参考资料)</span></label>
                     </div>
                     <!-- 独立窗口（不持久化，刷新后需重新开启） -->
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-desktop-pet">
-                        <label for="chatu8-ai-desktop-pet">独立窗口 (将智绘姬弹出到画中画小窗口，始终置顶显示，刷新后需重新开启)</label>
+                        <label for="chatu8-ai-desktop-pet"><span data-i18n="label_desktop_pet">独立窗口 (将智绘姬弹出到画中画小窗口，始终置顶显示，刷新后需重新开启)</span></label>
                     </div>
                     <!-- 屏幕共享 -->
                     <div class="st-chatu8-ai-setting-item checkbox" id="chatu8-ai-screen-share-item">
                         <input type="checkbox" id="chatu8-ai-screen-share">
-                        <label for="chatu8-ai-screen-share">共享电脑屏幕 (发消息时自动附加屏幕截图，仅桌面端)</label>
+                        <label for="chatu8-ai-screen-share"><span data-i18n="label_screen_share">共享电脑屏幕 (发消息时自动附加屏幕截图，仅桌面端)</span></label>
                     </div>
                     <div class="st-chatu8-ai-setting-item checkbox" id="chatu8-ai-browser-capture-item">
                         <input type="checkbox" id="chatu8-ai-browser-capture">
-                        <label for="chatu8-ai-browser-capture">共享浏览器界面 (发消息时自动附加当前网页截图)</label>
+                        <label for="chatu8-ai-browser-capture"><span data-i18n="label_browser_capture">共享浏览器界面 (发消息时自动附加当前网页截图)</span></label>
                     </div>
                     <!-- 楼层信息 -->
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-floor-message">
-                        <label for="chatu8-ai-floor-message">楼层信息 <span id="chatu8-ai-floor-status" class="st-chatu8-ai-floor-status off" title="未收集"></span></label>
+                        <label for="chatu8-ai-floor-message"><span data-i18n="label_floor_message">楼层信息</span> <span id="chatu8-ai-floor-status" class="st-chatu8-ai-floor-status off" data-i18n-title="title_floor_not_collected" title="未收集"></span></label>
                     </div>
                     <div id="chatu8-ai-floor-settings" style="display:none; border: 1px solid var(--st-chatu8-border-color); border-radius: 8px; padding: 12px; margin-top: -5px; margin-bottom: 5px;">
                         <div class="st-chatu8-ai-setting-item">
-                            <label for="chatu8-ai-floor-count">收集楼层数量 (1-50)</label>
+                            <label for="chatu8-ai-floor-count" data-i18n="label_floor_count">收集楼层数量 (1-50)</label>
                             <input type="number" id="chatu8-ai-floor-count" min="1" max="50" value="1" step="1">
-                            <small>在预设中使用 {{楼层信息}} 模板变量引用收集到的楼层消息。需先双击酒馆消息选择"收集楼层信息"。</small>
+                            <small data-i18n="help_floor_count">在预设中使用 {{楼层信息}} 模板变量引用收集到的楼层消息。需先双击酒馆消息选择"收集楼层信息"。</small>
                         </div>
                     </div>
                 </div>
@@ -195,115 +195,115 @@
                 <div class="st-chatu8-ai-settings-tab-content" data-settings-tab-content="voice">
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-tts-enabled">
-                        <label for="chatu8-ai-tts-enabled">语音朗读 (自动朗读智绘姬「」内的对话)</label>
+                        <label for="chatu8-ai-tts-enabled"><span data-i18n="label_tts_enabled">语音朗读 (自动朗读智绘姬「」内的对话)</span></label>
                     </div>
                     <!-- TTS 语音朗读参数设置 (启用后显示) -->
                     <div id="chatu8-ai-tts-settings" style="display:none; border: 1px solid var(--st-chatu8-border-color); border-radius: 8px; padding: 12px; margin-top: -5px; margin-bottom: 5px;">
                         <div class="st-chatu8-ai-setting-item">
-                            <label for="chatu8-ai-tts-scope">朗读范围</label>
+                            <label for="chatu8-ai-tts-scope" data-i18n="label_tts_scope">朗读范围</label>
                             <select id="chatu8-ai-tts-scope" class="st-chatu8-ai-select" style="width: 100%;">
-                                <option value="dialogue">仅语音（「」内对话）</option>
-                                <option value="full">全文（包含叙述）</option>
+                                <option value="dialogue" data-i18n="option_tts_dialogue">仅语音（「」内对话）</option>
+                                <option value="full" data-i18n="option_tts_full">全文（包含叙述）</option>
                             </select>
                         </div>
                         <div class="st-chatu8-ai-setting-item">
-                            <label for="chatu8-ai-tts-engine">TTS 引擎</label>
+                            <label for="chatu8-ai-tts-engine" data-i18n="label_tts_engine">TTS 引擎</label>
                             <select id="chatu8-ai-tts-engine" class="st-chatu8-ai-select" style="width: 100%;">
-                                <option value="qwen">Qwen (默认)</option>
-                                <option value="edge">Edge TTS (微软)</option>
+                                <option value="qwen" data-i18n="option_tts_qwen">Qwen (默认)</option>
+                                <option value="edge" data-i18n="option_tts_edge">Edge TTS (微软)</option>
                             </select>
                         </div>
                         <!-- Qwen TTS 专属设置 -->
                         <div id="chatu8-ai-tts-qwen-options" style="display:none; margin-top: 10px;">
                             <div class="st-chatu8-ai-setting-item">
-                                <label for="chatu8-ai-tts-qwen-voice">声音角色</label>
+                                <label for="chatu8-ai-tts-qwen-voice" data-i18n="label_tts_voice">声音角色</label>
                                 <select id="chatu8-ai-tts-qwen-voice" class="st-chatu8-ai-select" style="width: 100%;"></select>
                             </div>
                         </div>
                         <!-- Edge TTS 专属设置 -->
                         <div id="chatu8-ai-tts-edge-options" style="display:none; margin-top: 10px;">
                             <div class="st-chatu8-ai-setting-item">
-                                <label for="chatu8-ai-tts-edge-voice">声音角色</label>
+                                <label for="chatu8-ai-tts-edge-voice" data-i18n="label_tts_voice">声音角色</label>
                                 <select id="chatu8-ai-tts-edge-voice" class="st-chatu8-ai-select" style="width: 100%;"></select>
                             </div>
                             <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                                <label for="chatu8-ai-tts-edge-style">说话风格</label>
+                                <label for="chatu8-ai-tts-edge-style" data-i18n="label_tts_edge_style">说话风格</label>
                                 <select id="chatu8-ai-tts-edge-style" class="st-chatu8-ai-select" style="width: 100%;"></select>
                             </div>
                             <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                                <label for="chatu8-ai-tts-edge-rate">语速: <span id="chatu8-ai-tts-edge-rate-val">0</span></label>
+                                <label for="chatu8-ai-tts-edge-rate"><span data-i18n="label_tts_edge_rate">语速:</span> <span id="chatu8-ai-tts-edge-rate-val">0</span></label>
                                 <input type="range" id="chatu8-ai-tts-edge-rate" min="-50" max="50" step="5" value="0" style="width: 100%;">
                             </div>
                             <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                                <label for="chatu8-ai-tts-edge-pitch">音调: <span id="chatu8-ai-tts-edge-pitch-val">0</span></label>
+                                <label for="chatu8-ai-tts-edge-pitch"><span data-i18n="label_tts_edge_pitch">音调:</span> <span id="chatu8-ai-tts-edge-pitch-val">0</span></label>
                                 <input type="range" id="chatu8-ai-tts-edge-pitch" min="-50" max="50" step="5" value="0" style="width: 100%;">
                             </div>
                             <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
                                 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                                     <button id="chatu8-ai-tts-edge-ping" class="st-chatu8-ai-ping-btn">
-                                        <i class="fa fa-signal"></i> Ping 服务器
+                                        <i class="fa fa-signal"></i> <span data-i18n="btn_ping_server">Ping 服务器</span>
                                     </button>
-                                    <span id="chatu8-ai-tts-edge-ping-status" style="font-size: 12px; color: var(--st-chatu8-text-muted);">未检测</span>
+                                    <span id="chatu8-ai-tts-edge-ping-status" data-i18n="status_not_detected" style="font-size: 12px; color: var(--st-chatu8-text-muted);">未检测</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="st-chatu8-ai-setting-item checkbox">
                         <input type="checkbox" id="chatu8-ai-asr-enabled">
-                        <label for="chatu8-ai-asr-enabled">语音输入 (在聊天输入框旁显示麦克风按钮)</label>
+                        <label for="chatu8-ai-asr-enabled"><span data-i18n="label_asr_enabled">语音输入 (在聊天输入框旁显示麦克风按钮)</span></label>
                     </div>
                     <!-- ASR 语音输入参数设置 (启用后显示) -->
                     <div id="chatu8-ai-asr-settings" style="display:none; border: 1px solid var(--st-chatu8-border-color); border-radius: 8px; padding: 12px; margin-top: -5px; margin-bottom: 5px;">
                         <div class="st-chatu8-ai-setting-item">
-                            <label for="chatu8-ai-asr-silence-timeout">静音超时 (ms): <span id="chatu8-ai-asr-silence-timeout-val">1200</span></label>
+                            <label for="chatu8-ai-asr-silence-timeout"><span data-i18n="label_asr_silence_timeout">静音超时 (ms):</span> <span id="chatu8-ai-asr-silence-timeout-val">1200</span></label>
                             <input type="range" id="chatu8-ai-asr-silence-timeout" min="500" max="3000" step="100" value="1200" style="width: 100%;">
                         </div>
                         <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                            <label for="chatu8-ai-asr-vad-threshold">VAD 灵敏度: <span id="chatu8-ai-asr-vad-threshold-val">0.02</span></label>
+                            <label for="chatu8-ai-asr-vad-threshold"><span data-i18n="label_asr_vad_threshold">VAD 灵敏度:</span> <span id="chatu8-ai-asr-vad-threshold-val">0.02</span></label>
                             <input type="range" id="chatu8-ai-asr-vad-threshold" min="0.005" max="0.1" step="0.005" value="0.02" style="width: 100%;">
                         </div>
                         <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                            <label for="chatu8-ai-asr-max-keep">最大保留时长 (秒): <span id="chatu8-ai-asr-max-keep-val">10</span></label>
+                            <label for="chatu8-ai-asr-max-keep"><span data-i18n="label_asr_max_keep">最大保留时长 (秒):</span> <span id="chatu8-ai-asr-max-keep-val">10</span></label>
                             <input type="range" id="chatu8-ai-asr-max-keep" min="3" max="30" step="1" value="10" style="width: 100%;">
-                            <small>仅保留录音末尾的这段时长，丢弃前面的噪音</small>
+                            <small data-i18n="help_asr_max_keep">仅保留录音末尾的这段时长，丢弃前面的噪音</small>
                         </div>
                         <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                            <label for="chatu8-ai-asr-language">识别语言</label>
+                            <label for="chatu8-ai-asr-language" data-i18n="label_asr_language">识别语言</label>
                             <select id="chatu8-ai-asr-language" class="st-chatu8-ai-select" style="width: 100%;">
-                                <option value="auto">自动检测</option>
-                                <option value="zh">中文</option>
+                                <option value="auto" data-i18n="option_asr_auto">自动检测</option>
+                                <option value="zh" data-i18n="option_asr_zh">中文</option>
                                 <option value="en">English</option>
                                 <option value="ja">日本語</option>
                                 <option value="ko">한국어</option>
-                                <option value="yue">粤语</option>
+                                <option value="yue" data-i18n="option_asr_yue">粤语</option>
                             </select>
                         </div>
                         <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                            <label for="chatu8-ai-asr-append">输入模式</label>
+                            <label for="chatu8-ai-asr-append" data-i18n="label_asr_append_mode">输入模式</label>
                             <select id="chatu8-ai-asr-append" class="st-chatu8-ai-select" style="width: 100%;">
-                                <option value="true">追加到现有文本</option>
-                                <option value="false">替换现有文本</option>
+                                <option value="true" data-i18n="option_asr_append">追加到现有文本</option>
+                                <option value="false" data-i18n="option_asr_replace">替换现有文本</option>
                             </select>
                         </div>
                         <div class="st-chatu8-ai-setting-item checkbox" style="margin-top: 10px;">
                             <input type="checkbox" id="chatu8-ai-asr-auto-send" checked>
-                            <label for="chatu8-ai-asr-auto-send">识别后自动发送</label>
-                            <small style="margin-top: 2px; display: block; color: var(--st-chatu8-text-secondary);">关闭后语音识别结果仅填入输入框，不会自动发送</small>
+                            <label for="chatu8-ai-asr-auto-send"><span data-i18n="label_asr_auto_send">识别后自动发送</span></label>
+                            <small data-i18n="help_asr_auto_send" style="margin-top: 2px; display: block; color: var(--st-chatu8-text-secondary);">关闭后语音识别结果仅填入输入框，不会自动发送</small>
                         </div>
                         <div class="st-chatu8-ai-setting-item" style="margin-top: 10px;">
-                            <label for="chatu8-ai-asr-conv-mode">对话模式</label>
+                            <label for="chatu8-ai-asr-conv-mode" data-i18n="label_asr_conv_mode">对话模式</label>
                             <select id="chatu8-ai-asr-conv-mode" class="st-chatu8-ai-select" style="width: 100%;">
-                                <option value="single">单次输入（点击录音，识别后填入）</option>
-                                <option value="conversation">多轮对话（自动录音→识别→发送→循环）</option>
+                                <option value="single" data-i18n="option_asr_single">单次输入（点击录音，识别后填入）</option>
+                                <option value="conversation" data-i18n="option_asr_conversation">多轮对话（自动录音→识别→发送→循环）</option>
                             </select>
-                            <small style="margin-top: 4px; display: block; color: var(--st-chatu8-text-secondary);">多轮对话模式会自动发送、AI生成和TTS播放时自动禁音、播放结束后自动恢复录音</small>
+                            <small data-i18n="help_asr_conv_mode" style="margin-top: 4px; display: block; color: var(--st-chatu8-text-secondary);">多轮对话模式会自动发送、AI生成和TTS播放时自动禁音、播放结束后自动恢复录音</small>
                         </div>
                         <!-- 麦克风测试 -->
                         <div class="st-chatu8-ai-setting-item" style="margin-top: 12px;">
-                            <label>麦克风测试</label>
+                            <label data-i18n="label_mic_test">麦克风测试</label>
                             <div id="chatu8-ai-asr-mic-test-area" style="margin-top: 6px;">
                                 <button id="chatu8-ai-asr-mic-test-btn" class="st-chatu8-ai-ping-btn" style="width: 100%; justify-content: center;">
-                                    <i class="fa-solid fa-wave-square"></i> 开始测试
+                                    <i class="fa-solid fa-wave-square"></i> <span data-i18n="btn_start_test">开始测试</span>
                                 </button>
                                 <div id="chatu8-ai-asr-mic-test-meter" style="display: none; margin-top: 8px;">
                                     <div style="position: relative; width: 100%; height: 28px; background: var(--st-chatu8-bg-secondary, #2a2a2a); border-radius: 6px; overflow: hidden; border: 1px solid var(--st-chatu8-border-color);">
@@ -314,19 +314,19 @@
                                         </div>
                                     </div>
                                     <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 10px; color: var(--st-chatu8-text-secondary);">
-                                        <span>0 (静音)</span>
-                                        <span id="chatu8-ai-asr-meter-status" style="font-weight: bold; color: #888;">等待中...</span>
-                                        <span>1.0 (最大)</span>
+                                        <span data-i18n="asr_silence_label">0 (静音)</span>
+                                        <span id="chatu8-ai-asr-meter-status" data-i18n="asr_waiting_status" style="font-weight: bold; color: #888;">等待中...</span>
+                                        <span data-i18n="asr_max_label">1.0 (最大)</span>
                                     </div>
                                 </div>
                             </div>
-                            <small style="margin-top: 4px; display: block; color: var(--st-chatu8-text-secondary);">测试麦克风音量，白线为VAD阈值。调节上方阈值滑块使白线刚好高于底噪</small>
+                            <small data-i18n="help_asr_meter" style="margin-top: 4px; display: block; color: var(--st-chatu8-text-secondary);">测试麦克风音量，白线为VAD阈值。调节上方阈值滑块使白线刚好高于底噪</small>
                         </div>
                     </div>
                 </div>
 
                 <!-- 关闭按钮（所有 tab 共用） -->
-                <button id="st-chatu8-ai-save-settings" class="st-chatu8-ai-save-btn" style="margin-top: 20px;">关闭设置面板</button>
+                <button id="st-chatu8-ai-save-settings" data-i18n="btn_close_settings_panel" class="st-chatu8-ai-save-btn" style="margin-top: 20px;">关闭设置面板</button>
             </div>
         </div>
 
@@ -335,23 +335,23 @@
             <!-- 顶部工具栏 -->
             <div class="summary-toolbar">
                 <div class="summary-toolbar-left">
-                    <span class="summary-title"><i class="fa-solid fa-layer-group"></i> 聊天总结</span>
+                    <span class="summary-title"><i class="fa-solid fa-layer-group"></i> <span data-i18n="summary_panel_title">聊天总结</span></span>
                 </div>
                 <div class="summary-toolbar-actions">
-                    <button id="summary-toggle-multiselect" class="summary-btn summary-btn--outline" title="开启多选模式">
-                        <i class="fa-solid fa-check-double"></i> 多选
+                    <button id="summary-toggle-multiselect" class="summary-btn summary-btn--outline" data-i18n-title="title_multiselect" title="开启多选模式">
+                        <i class="fa-solid fa-check-double"></i> <span data-i18n="btn_multiselect">多选</span>
                     </button>
-                    <button id="summary-generate-selected-btn" class="summary-btn summary-btn--primary" disabled title="对选中项生成合并总结">
-                        <i class="fa-solid fa-compress-alt"></i> 总结选中
+                    <button id="summary-generate-selected-btn" class="summary-btn summary-btn--primary" disabled data-i18n-title="title_summarize_selected" title="对选中项生成合并总结">
+                        <i class="fa-solid fa-compress-alt"></i> <span data-i18n="btn_summarize_selected">总结选中</span>
                     </button>
-                    <button id="summary-enable-selected-btn" class="summary-btn summary-btn--success" disabled title="启用选中的总结">
-                        <i class="fa-solid fa-check"></i> 启用
+                    <button id="summary-enable-selected-btn" class="summary-btn summary-btn--success" disabled data-i18n-title="title_enable_selected" title="启用选中的总结">
+                        <i class="fa-solid fa-check"></i> <span data-i18n="btn_enable_selected">启用</span>
                     </button>
-                    <button id="summary-disable-selected-btn" class="summary-btn summary-btn--warning" disabled title="取消启用选中的总结">
-                        <i class="fa-solid fa-times"></i> 禁用
+                    <button id="summary-disable-selected-btn" class="summary-btn summary-btn--warning" disabled data-i18n-title="title_disable_selected" title="取消启用选中的总结">
+                        <i class="fa-solid fa-times"></i> <span data-i18n="btn_disable_selected">禁用</span>
                     </button>
                 </div>
-                <button id="summary-close-btn" class="summary-btn summary-btn--icon" title="关闭">
+                <button id="summary-close-btn" class="summary-btn summary-btn--icon" data-i18n-title="title_close_panel" title="关闭">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -371,23 +371,23 @@
             <!-- 底部提示 -->
             <div class="summary-footer">
                 <span id="summary-enabled-hint" class="summary-enabled-hint"></span>
-                <span class="summary-footer-tip">提示：启用的总结会替换对应轮次的对话历史发送给 AI（始终保留最近 15 轮）</span>
+                <span class="summary-footer-tip" data-i18n="summary_footer_tip">提示：启用的总结会替换对应轮次的对话历史发送给 AI（始终保留最近 15 轮）</span>
             </div>
         </div>
 
         <!-- 智绘姬历史记录面板 (默认隐藏) -->
         <div id="st-chatu8-ai-history-panel" class="st-chatu8-ai-settings-panel">
             <div class="st-chatu8-ai-settings-header">
-                <h4>聊天记录</h4>
+                <h4 data-i18n="ai_history_header">聊天记录</h4>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <button id="st-chatu8-ai-select-all" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" title="全选" style="padding: 5px 10px; font-size: 0.9em;">
-                        <i class="fa-solid fa-check-double"></i> 全选
+                    <button id="st-chatu8-ai-select-all" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" data-i18n-title="title_select_all" title="全选" style="padding: 5px 10px; font-size: 0.9em;">
+                        <i class="fa-solid fa-check-double"></i> <span data-i18n="btn_select_all">全选</span>
                     </button>
-                    <button id="st-chatu8-ai-deselect-all" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" title="取消全选" style="padding: 5px 10px; font-size: 0.9em;">
-                        <i class="fa-solid fa-xmark"></i> 取消
+                    <button id="st-chatu8-ai-deselect-all" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" data-i18n-title="title_deselect_all" title="取消全选" style="padding: 5px 10px; font-size: 0.9em;">
+                        <i class="fa-solid fa-xmark"></i> <span data-i18n="btn_deselect_all">取消</span>
                     </button>
-                    <button id="st-chatu8-ai-export-chat" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" title="导出选中的聊天记录" style="padding: 5px 10px; font-size: 0.9em;">
-                        <i class="fa-solid fa-download"></i> 导出
+                    <button id="st-chatu8-ai-export-chat" class="st-chatu8-ai-btn st-chatu8-ai-fetch-btn" data-i18n-title="title_export_chat" title="导出选中的聊天记录" style="padding: 5px 10px; font-size: 0.9em;">
+                        <i class="fa-solid fa-download"></i> <span data-i18n="btn_export_chat">导出</span>
                     </button>
                     <span class="st-chatu8-ai-settings-close" id="st-chatu8-ai-history-close"><i class="fa-solid fa-xmark"></i></span>
                 </div>
