@@ -135,6 +135,7 @@ const chatu8_i18n = {
     },
 
     applyTextSubstitutions(rootEl) {
+        // Skip substitution for Chinese since the source content is already in Chinese.
         if (this.currentLang === 'zh') return;
 
         const root = rootEl.nodeType === Node.DOCUMENT_NODE ? document.body : rootEl;
