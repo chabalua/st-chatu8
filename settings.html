@@ -100,7 +100,7 @@
                 <div class="st-chatu8-ai-settings-tab-content active" data-settings-tab-content="api">
                     <div class="st-chatu8-ai-setting-item">
                         <label for="chatu8-ai-api-url" data-i18n="label_api_address">API 地址</label>
-                        <input type="text" id="chatu8-ai-api-url" placeholder="如: https://api.openai.com/v1">
+                        <input type="text" id="chatu8-ai-api-url" data-i18n-placeholder="placeholder_api_url_example" placeholder="如: https://api.openai.com/v1">
                         <small data-i18n="help_api_url">如果不填使用酒馆默认后端代理地址，需用酒馆代理时填 /api/v1 形式</small>
                     </div>
                     <div class="st-chatu8-ai-setting-item">
@@ -115,7 +115,7 @@
                         <select id="chatu8-ai-model-select" class="st-chatu8-ai-select" data-i18n-title="title_select_model" title="选择获取到的模型">
                             <option value="" data-i18n="option_select_model_first">(请先获取并选择模型)</option>
                         </select>
-                        <input type="text" id="chatu8-ai-model" placeholder="支持上面自动选择或手动输入 (如: gpt-3.5-turbo)" style="width: 100%;">
+                        <input type="text" id="chatu8-ai-model" data-i18n-placeholder="placeholder_model_input" placeholder="支持上面自动选择或手动输入 (如: gpt-3.5-turbo)" style="width: 100%;">
                     </div>
                     <div class="st-chatu8-ai-setting-item">
                         <label for="chatu8-ai-system-prompt" data-i18n="label_system_prompt">预设角色 (System Prompt)</label>
@@ -273,7 +273,7 @@
                                 <option value="auto" data-i18n="option_asr_auto">自动检测</option>
                                 <option value="zh" data-i18n="option_asr_zh">中文</option>
                                 <option value="en">English</option>
-                                <option value="ja">日本語</option>
+                                <option value="ja" data-i18n="option_asr_ja">日本語</option>
                                 <option value="ko">한국어</option>
                                 <option value="yue" data-i18n="option_asr_yue">粤语</option>
                             </select>
