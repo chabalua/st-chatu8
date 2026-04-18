@@ -240,6 +240,7 @@
   "_comment_banana": "=== Banana tab ===",
   "h_banana_basic": "Cài đặt cơ bản",
   "label_banana_api_url": "Địa chỉ kết nối API",
+  "label_banana_api_key": "API Key",
   "placeholder_banana_api_url": "http://localhost:7860",
   "placeholder_banana_api_key": "Nhập API Key của bạn vào đây",
   "label_banana_image_model": "Chọn mô hình ảnh",
