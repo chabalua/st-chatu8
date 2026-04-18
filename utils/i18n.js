@@ -138,7 +138,8 @@ const chatu8_i18n = {
 
     /**
      * Bootstrap the i18n system.
-     * Called once from index.js on extension load.
+     * Loads the saved language and starts a MutationObserver so that
+     * dynamically loaded tab content is translated automatically.
      */
     async init() {
         const saved = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
@@ -156,18 +157,27 @@ const chatu8_i18n = {
             }
         });
 
-        // Observe the whole document body so we catch every tab panel
-        // that is lazily injected by the existing UI code.
-        const target = document.body ?? document.documentElement;
-        observer.observe(target, { childList: true, subtree: true });
+        // Observe document.body once it is available.
+        const attachObserver = () => {
+            const target = document.body ?? document.documentElement;
+            observer.observe(target, { childList: true, subtree: true });
+        };
+
+        if (document.body) {
+            attachObserver();
+        } else {
+            document.addEventListener('DOMContentLoaded', attachObserver, { once: true });
+        }
     },
 };
 
 // Expose globally so inline HTML event handlers can reach it.
 window.chatu8_i18n = chatu8_i18n;
 
+// Auto-initialise when the module is imported.
+chatu8_i18n.init().catch(err =>
+    console.error('[st-chatu8 i18n] Initialisation failed:', err)
+);
+
 export { chatu8_i18n };
 
-export async function initI18n() {
-    await chatu8_i18n.init();
-}
