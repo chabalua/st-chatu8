@@ -139,7 +139,7 @@
   "opt_disable": "禁用",
   "opt_none": "无",
   "opt_author_preset": "作者预设",
-  "opt_author_preset2": "作者预set 2",
+  "opt_author_preset2": "作者预设 2",
 
   "_comment_sizes": "=== Image size options ===",
   "size_512x512": "512x512 (1:1, 图标)",
@@ -235,7 +235,7 @@
   "label_enable_vibe_group_transfer": "启用 Vibe 组氛围转移",
   "title_enable_vibe_group_transfer": "使用 Vibe 组进行氛围转移，最多可同时使用 4 个 Vibe。启用后将自动禁用单个 Vibe 氛围转移。",
   "title_normalize_ref_strength": "归一化参考强度值。启用后，Vibe 组中各 Vibe 的强度值将被自动归一化，使其总和为 1.0。",
-  "label_normalize_ref_strength": "Normalize Reference Strength Values",
+  "label_normalize_ref_strength": "归一化参考强度值",
 
   "_comment_banana": "=== Banana tab ===",
   "h_banana_basic": "基础设置",
