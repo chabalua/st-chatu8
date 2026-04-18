@@ -100,6 +100,65 @@
 ---
 享受在 SillyTavern 中自由创作的乐趣吧！
 
+## 🌐 多语言支持 (i18n)
+
+插件内置了国际化系统，现支持 **简体中文 (默认)** 和 **Tiếng Việt (Vietnamese)**。
+
+### 切换语言
+
+打开 **主要设置** 标签页，顶部的 **语言 / Ngôn ngữ** 下拉框即可切换。选择会立即生效并在浏览器中持久保存。
+
+### 文件结构
+
+```
+st-chatu8/
+├── i18n/
+│   ├── zh.json   ← 简体中文（默认）
+│   └── vi.json   ← Tiếng Việt
+└── utils/
+    └── i18n.js   ← i18n 模块（非混淆）
+```
+
+### 为 HTML 元素添加翻译
+
+在任意 HTML 元素上使用以下属性：
+
+| 属性 | 作用 |
+|------|------|
+| `data-i18n="key"` | 翻译 `textContent` |
+| `data-i18n-title="key"` | 翻译 `title` 属性 |
+| `data-i18n-placeholder="key"` | 翻译 `placeholder` 属性 |
+
+**示例：**
+```html
+<label data-i18n="main_label_enabled">启用插件</label>
+<button data-i18n-title="btn_toggle_theme" title="切换主题">…</button>
+```
+
+### 添加新语言
+
+1. 复制 `i18n/zh.json` 并命名为 `i18n/<code>.json`（例如 `en.json`）。
+2. 翻译所有 value（保持 key 不变）。
+3. 在 `html/settings/main.html` 中的语言选择器里添加一个 `<option value="<code>">…</option>`。
+
+### JavaScript API
+
+```javascript
+// 切换语言（异步）
+await window.chatu8_i18n.setLanguage('vi');
+
+// 获取单个翻译字符串
+const text = window.chatu8_i18n.t('main_label_enabled', '启用插件');
+
+// 对动态插入的 DOM 节点手动应用翻译
+window.chatu8_i18n.applyTranslations(myElement);
+```
+
+> **TODO：** 其他标签页（SD、NovelAI、ComfyUI 等）的翻译 key 尚未完整添加，欢迎贡献！
+
+---
+享受在 SillyTavern 中自由创作的乐趣吧！
+
 ## 帮助与支持
 
 -   [飞书文档](https://gxcgf4l6b2y.feishu.cn/docx/XDo7dLpvhov6AexuLu3c8mpynSC?from=from_copylink)
