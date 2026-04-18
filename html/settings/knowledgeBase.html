@@ -31,7 +31,7 @@
                     <span class="st-chatu8-slider"></span>
                 </div>
             </div>
-            <p class="st-chatu8-hint">
+            <p class="st-chatu8-hint" data-i18n="kb_trigger_depth_hint">
                 触发深度 0：只用最后一条用户消息做关键词触发。<br>
                 深度 1：用最后一条用户消息 ＋ 前一条AI回复（共2条）做触发，以此类推。<br>
                 深度越高，被触发的世界书条目越多，但处理时间也略增。<br>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div id="ch-kb2-world-list" class="st-chatu8-send-data-list">
-                        <div style="padding:10px; color:#888;">点击刷新按钮加载世界书列表。</div>
+                        <div data-i18n="kb_load_worldbook_hint" style="padding:10px; color:#888;">点击刷新按钮加载世界书列表。</div>
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div id="ch-kb2-entry-list" class="st-chatu8-send-data-list">
-                        <div style="padding:10px; color:#888;">请先在左侧选择一个世界书。</div>
+                        <div data-i18n="kb_select_worldbook_hint" style="padding:10px; color:#888;">请先在左侧选择一个世界书。</div>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     <span class="st-chatu8-slider"></span>
                 </div>
             </div>
-            <p class="st-chatu8-hint">
+            <p class="st-chatu8-hint" data-i18n="help_user_persona_inject">
                 User人设内容将直接注入系统提示词，AI 始终可见。<br>
                 提示：User人设与角色人设共享预设池，可使用模板变量 <code>{{userpersona}}</code> 注入。
             </p>
@@ -140,7 +140,7 @@
                     <button class="st-chatu8-btn st-chatu8-btn-small danger" id="ch-user-avatar-remove-btn" style="display: none;"><i class="fa-solid fa-trash"></i> <span data-i18n="btn_remove_avatar">移除头像</span></button>
                     <input type="file" id="ch-user-avatar-input" accept="image/*" style="display: none;" />
                 </div>
-                <p class="st-chatu8-hint">
+                <p class="st-chatu8-hint" data-i18n="kb_avatar_size_hint">
                     推荐尺寸：256x256 或更大的正方形图片，支持 JPG、PNG、WebP 格式
                 </p>
             </div>
@@ -224,8 +224,8 @@
 
         <!-- 穿越认知区（次元穿越相关） -->
         <div class="st-chatu8-settings-section">
-            <h4><span data-i18n="h_kb_isekai">🌀 穿越认知</span> <span class="st-chatu8-hint" style="font-weight:normal;font-size:12px;">（次元穿越设定，可选）</span></h4>
-            <p class="st-chatu8-hint">
+            <h4><span data-i18n="h_kb_isekai">🌀 穿越认知</span> <span class="st-chatu8-hint" data-i18n="label_isekai_optional" style="font-weight:normal;font-size:12px;">（次元穿越设定，可选）</span></h4>
+            <p class="st-chatu8-hint" data-i18n="kb_user_isekai_hint">
                 User 的穿越认知设定。若不需要穿越设定，留空即可。
             </p>
             <div class="st-chatu8-field-col">
@@ -273,43 +273,44 @@
         <!-- 人设生成区域 -->
         <div class="ch-persona-gen-section">
             <div class="ch-persona-gen-header">
-                <span class="ch-section-title">✨ AI 人设生成</span>
+                <span class="ch-section-title" data-i18n="label_ai_persona_gen_section">✨ AI 人设生成</span>
             </div>
             <div class="ch-persona-gen-controls">
                 <!-- 生成类型选择器 -->
                 <div class="ch-persona-gen-type-selector">
-                    <label>生成类型：</label>
+                    <label data-i18n="kb_persona_gen_type_label">生成类型：</label>
                     <select id="ch-persona-gen-type" class="st-chatu8-select">
-                        <option value="character">角色人设（含穿越设定）</option>
-                        <option value="user">User 人设（无穿越设定）</option>
+                        <option value="character" data-i18n="option_persona_gen_character">角色人设（含穿越设定）</option>
+                        <option value="user" data-i18n="option_persona_gen_user">User 人设（无穿越设定）</option>
                     </select>
                 </div>
                 <!-- 需求输入 -->
                 <div class="ch-persona-gen-demand">
-                    <label>生成需求（可选）</label>
+                    <label data-i18n="label_persona_gen_demand">生成需求（可选）</label>
                     <textarea id="ch-persona-gen-demand" 
                               class="ch-textarea" 
+                              data-i18n-placeholder="placeholder_persona_gen_demand"
                               placeholder="描述你想要的角色人设特点，留空则根据当前角色卡自动生成..."
                               rows="3"></textarea>
                 </div>
                 <!-- 参考图片上传 -->
                 <div class="ch-persona-gen-upload">
                     <div class="ch-persona-gen-upload-header">
-                        <label>📎 参考图片（可选）</label>
+                        <label data-i18n="label_persona_gen_images">�� 参考图片（可选）</label>
                         <button type="button" id="ch-persona-gen-upload-btn" class="ch-btn-small">
-                            <i class="fa-solid fa-plus"></i> 添加图片
+                            <i class="fa-solid fa-plus"></i> <span data-i18n="btn_persona_gen_add_image">添加图片</span>
                         </button>
                         <input type="file" id="ch-persona-gen-upload-input" accept="image/*" multiple style="display: none;" />
                     </div>
                     <div id="ch-persona-gen-preview" class="ch-persona-gen-preview-container">
-                        <div class="ch-persona-gen-empty-hint">点击上方按钮添加参考图片，AI 将根据图片内容辅助生成人设</div>
+                        <div class="ch-persona-gen-empty-hint" data-i18n="persona_gen_empty_hint">点击上方按钮添加参考图片，AI 将根据图片内容辅助生成人设</div>
                     </div>
                 </div>
                 <!-- 生成按钮 -->
                 <div class="ch-persona-gen-actions">
                     <button id="ch-persona-gen-btn" class="ch-btn ch-btn-primary">
                         <span class="ch-btn-icon">🎭</span>
-                        <span class="ch-btn-text">生成人设</span>
+                        <span class="ch-btn-text" data-i18n="btn_persona_gen">生成人设</span>
                     </button>
                     <span id="ch-persona-gen-status" class="ch-status-text"></span>
                 </div>
@@ -326,7 +327,7 @@
                     <span class="st-chatu8-slider"></span>
                 </div>
             </div>
-            <p class="st-chatu8-hint">
+            <p class="st-chatu8-hint" data-i18n="help_persona_inject_simple">
                 人设内容将直接注入系统提示词，AI 始终可见。
             </p>
         </div>
@@ -347,7 +348,7 @@
                     <button class="st-chatu8-btn st-chatu8-btn-small danger" id="ch-persona-avatar-remove-btn" style="display: none;"><i class="fa-solid fa-trash"></i> <span data-i18n="btn_remove_avatar">移除头像</span></button>
                     <input type="file" id="ch-persona-avatar-input" accept="image/*" style="display: none;" />
                 </div>
-                <p class="st-chatu8-hint">
+                <p class="st-chatu8-hint" data-i18n="kb_avatar_size_hint">
                     推荐尺寸：256x256 或更大的正方形图片，支持 JPG、PNG、WebP 格式
                 </p>
             </div>
@@ -427,8 +428,8 @@
 
         <!-- 穿越认知区（次元穿越相关） -->
         <div class="st-chatu8-settings-section">
-            <h4><span data-i18n="h_kb_isekai">🌀 穿越认知</span> <span class="st-chatu8-hint" style="font-weight:normal;font-size:12px;">（次元穿越设定，可选）</span></h4>
-            <p class="st-chatu8-hint">
+            <h4><span data-i18n="h_kb_isekai">🌀 穿越认知</span> <span class="st-chatu8-hint" data-i18n="label_isekai_optional" style="font-weight:normal;font-size:12px;">（次元穿越设定，可选）</span></h4>
+            <p class="st-chatu8-hint" data-i18n="help_char_isekai_intro">
                 角色将通过「次元穿越」来到用户电脑中的酒馆，陪伴用户度过100天。<br>
                 以下字段定义角色对穿越的认知。留空则不使用穿越设定。
             </p>
